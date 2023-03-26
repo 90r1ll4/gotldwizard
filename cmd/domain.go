@@ -21,7 +21,7 @@ var output string
 // domainCmd represents the domain command
 var domainCmd = &cobra.Command{
 	Use:     "domain",
-	Short:   "To choose domain mode",
+	Short:   "Domain Mode",
 	Aliases: []string{"dom"},
 	Run: func(cmd *cobra.Command, args []string) {
 		if domainName != "" && tld != "" {
