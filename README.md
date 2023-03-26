@@ -43,6 +43,23 @@ Flags:
 
 Use "tldwizard [command] --help" for more information about a command.
 ```
+To see subcommands add `command -h`
+
+```
+Usage:
+  tldwizard domain [flags]
+
+Aliases:
+  domain, dom
+
+Flags:
+  -l, --domainList string   domain name list
+  -d, --domainName string   domain name
+  -h, --help                help for domain
+  -o, --output string       output file name or path
+  -t, --tld string          TLD(Top Level Domain) to add[com,in,tech]
+  -T, --tldList string      TLD (Top Level Domain) list to add
+```
 
 For an overview of all commands use the following command:
 
@@ -87,4 +104,6 @@ example.tech
 
 ```
 
-**NOTE:** Nucwrap should be used responsibly and with permission from the target owner.
+To store the output in file use `-o  FILENAME` 
+
+**NOTE:** Gotldwizard should be used responsibly and with permission from the target owner.
