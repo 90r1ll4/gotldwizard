@@ -98,9 +98,11 @@ gotldwizard domain -l domains.txt -t tech
 ```
 This will change the TLD of all the domain names listed in `domains.txt` to `tech`.
 ```bash
-example.comexample.nl
+example.com
+example.nl
 example.tech
-example.comexample.nl
+example.com
+example.nl
 example.tech
 
 ```
