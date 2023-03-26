@@ -9,7 +9,7 @@ Gotldwizard is a Go package that helps to change the top-level domain (TLD) of a
 To install Gotldwizard, use the following command:
 
 ```bash
-go get -u github.com/username/gotldwizard
+go get -u github.com/90r1ll4/gotldwizard
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ Flags:
   -T, --tldList string      TLD (Top Level Domain) list to add
 ```
 To build use command `go build` to get genrate binary file.
- 
+
 For an overview of all commands use the following command:
 
 ```bash
