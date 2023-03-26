@@ -79,5 +79,12 @@ example.nl
 gotldwizard domain -l domains.txt -t tech
 ```
 This will change the TLD of all the domain names listed in `domains.txt` to `tech`.
+```bash
+example.comexample.nl
+example.tech
+example.comexample.nl
+example.tech
+
+```
 
 **NOTE:** Nucwrap should be used responsibly and with permission from the target owner.

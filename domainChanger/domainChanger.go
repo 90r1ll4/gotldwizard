@@ -40,6 +40,7 @@ func DomainCheckerCase2(domainList string, tldName string, output string) {
 	for _, value := range fileDomainSlice {
 		if value != "" {
 			var parsedUrl *tld.URL
+			value = strings.TrimRight(value, "\r")
 			if strings.HasPrefix(value, "http") {
 				parsedUrl, _ = tld.Parse(value)
 			} else {
@@ -54,6 +55,8 @@ func DomainCheckerCase2(domainList string, tldName string, output string) {
 	for _, value2 := range fileDomainSlice {
 		for _, value := range uniqueTld {
 			if value2 != "" {
+				value = strings.TrimRight(value, "\r")
+				value2 = strings.TrimRight(value2, "\r")
 				var parsedUrl *tld.URL
 				if strings.HasPrefix(value2, "http") {
 					parsedUrl, _ = tld.Parse(value2)
@@ -82,6 +85,7 @@ func DomainCheckerCase3(domainList string, tldList string, output string) {
 	for _, value := range fileDomainSlice {
 		if value != "" {
 			var parsedUrl *tld.URL
+			value = strings.TrimRight(value, "\r")
 			if strings.HasPrefix(value, "http") {
 				parsedUrl, _ = tld.Parse(value)
 			} else {
@@ -96,6 +100,8 @@ func DomainCheckerCase3(domainList string, tldList string, output string) {
 	for _, value2 := range fileDomainSlice {
 		for _, value := range uniqueTld {
 			if value2 != "" {
+				value = strings.TrimRight(value, "\r")
+				value2 = strings.TrimRight(value2, "\r")
 				var parsedUrl *tld.URL
 				if strings.HasPrefix(value2, "http") {
 					parsedUrl, _ = tld.Parse(value2)
@@ -127,6 +133,7 @@ func DomainCheckerCase4(domainName string, tldList string, output string) {
 	var content string
 
 	for _, value := range uniqueTld {
+		value = strings.TrimRight(value, "\r")
 		content += parsedUrl.Domain + "." + value + "\n"
 	}
 	if output != "" {
