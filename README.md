@@ -60,7 +60,8 @@ Flags:
   -t, --tld string          TLD(Top Level Domain) to add[com,in,tech]
   -T, --tldList string      TLD (Top Level Domain) list to add
 ```
-
+To build use command `go build` to get genrate binary file.
+ 
 For an overview of all commands use the following command:
 
 ```bash
