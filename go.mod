@@ -9,7 +9,7 @@ require (
 
 require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.17 // indirect
+	github.com/mattn/go-isatty v0.0.18 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 )
 
@@ -17,5 +17,5 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jpillora/go-tld v1.2.1 // direct
 	github.com/spf13/pflag v1.0.5 // indirect
-	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/net v0.8.0 // indirect
 )
