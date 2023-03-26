@@ -4,7 +4,7 @@ Copyright © 2023 Ashwin Singh <ashwinsinghsingh666672@gmail.com>
 package main
 
 import (
-	"gotldwizard/cmd"
+	"github.com/90r1ll4/gotldwizard/cmd"
 
 	"github.com/fatih/color"
 )

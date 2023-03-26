@@ -4,8 +4,9 @@ Copyright © 2023 Ashwin Singh <ashwinsinghsingh666672@gmail.com>
 package cmd
 
 import (
-	"gotldwizard/domainChanger"
 	"os"
+
+	"github.com/90r1ll4/gotldwizard/domainChanger"
 
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
