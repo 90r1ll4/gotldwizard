@@ -1,4 +1,4 @@
-module github.com/90r1ll4/gotldwizard
+module gotldwizard
 
 go 1.20
 
