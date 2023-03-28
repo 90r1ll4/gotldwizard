@@ -7,7 +7,6 @@ import (
 	"os"
 
 	"github.com/90r1ll4/gotldwizard/domainChanger"
-
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
@@ -18,21 +17,28 @@ var tld string
 var tldList string
 
 var output string
+var httpxS bool
 
 // domainCmd represents the domain command
 var domainCmd = &cobra.Command{
-	Use:     "domain",
+	Use:     "domain [flags]",
 	Short:   "Domain Mode",
 	Aliases: []string{"dom"},
 	Run: func(cmd *cobra.Command, args []string) {
+		// if httpxS {
+		// 	fmt.Println("Verbose mode active")
+		// } else {
+		// 	fmt.Println("Verbose mode not active")
+		// }
+
 		if domainName != "" && tld != "" {
-			domainChanger.DomainCheckerCase1(domainName, tld, output)
+			domainChanger.DomainCheckerCase1(domainName, tld, output, httpxS)
 		} else if domainList != "" && tld != "" {
-			domainChanger.DomainCheckerCase2(domainList, tld, output)
+			domainChanger.DomainCheckerCase2(domainList, tld, output, httpxS)
 		} else if domainList != "" && tldList != "" {
-			domainChanger.DomainCheckerCase3(domainList, tldList, output)
+			domainChanger.DomainCheckerCase3(domainList, tldList, output, httpxS)
 		} else if domainName != "" && tldList != "" {
-			domainChanger.DomainCheckerCase4(domainName, tldList, output)
+			domainChanger.DomainCheckerCase4(domainName, tldList, output, httpxS)
 		}
 
 	},
@@ -45,8 +51,10 @@ func init() {
 	domainCmd.PersistentFlags().StringVarP(&tld, "tld", "t", "", "TLD(Top Level Domain) to add[com,in,tech]")
 	domainCmd.PersistentFlags().StringVarP(&tldList, "tldList", "T", "", "TLD (Top Level Domain) list to add")
 	domainCmd.PersistentFlags().StringVarP(&output, "output", "o", "", "output file name or path")
+	rootCmd.PersistentFlags().BoolVar(&httpxS, "httpx", false, "Use httpx for the output domains")
 
 	domainCmd.PersistentPreRunE = func(cmd *cobra.Command, args []string) error {
+
 		if domainName == "" && domainList == "" {
 			color.Red("Either Domain or Domain List Argument must be provided use Flag[-d][-l]")
 			os.Exit(1)

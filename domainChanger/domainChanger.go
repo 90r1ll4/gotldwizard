@@ -5,11 +5,12 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/90r1ll4/gotldwizard/httpxCheck"
 	"github.com/fatih/color"
 	tld "github.com/jpillora/go-tld"
 )
 
-func DomainCheckerCase1(domainName string, tldName string, output string) {
+func DomainCheckerCase1(domainName string, tldName string, output string, httpxS bool) {
 	var parsedUrl *tld.URL
 	if strings.HasPrefix(domainName, "http") {
 		parsedUrl, _ = tld.Parse(domainName)
@@ -19,11 +20,18 @@ func DomainCheckerCase1(domainName string, tldName string, output string) {
 	tldSlice := strings.Split(tldName, ",")
 	tldSlice = append(tldSlice, parsedUrl.TLD)
 	uniqueTld := FindUniqueTld(tldSlice)
+
 	var content string
 
 	for _, value := range uniqueTld {
 		content += parsedUrl.Domain + "." + value + "\n"
 	}
+	if httpxS {
+		httpSlice := strings.Split(content, "\n")
+		httpxCheck.HttpxChecker(httpSlice)
+		os.Exit(0)
+	}
+
 	if output != "" {
 		outputInFile(output, content)
 	} else {
@@ -31,7 +39,7 @@ func DomainCheckerCase1(domainName string, tldName string, output string) {
 	}
 }
 
-func DomainCheckerCase2(domainList string, tldName string, output string) {
+func DomainCheckerCase2(domainList string, tldName string, output string, httpxS bool) {
 	fileDomain := string(readFile(domainList))
 	fileDomainSlice := strings.Split(string(fileDomain), "\n")
 	var tldSlice []string = strings.Split(tldName, ",")
@@ -67,6 +75,11 @@ func DomainCheckerCase2(domainList string, tldName string, output string) {
 			}
 		}
 	}
+	if httpxS {
+		httpxCheck.HttpxChecker(content)
+		os.Exit(0)
+	}
+
 	if output != "" {
 		outputInFile(output, strings.Join(content, "\n"))
 	} else {
@@ -75,7 +88,7 @@ func DomainCheckerCase2(domainList string, tldName string, output string) {
 
 }
 
-func DomainCheckerCase3(domainList string, tldList string, output string) {
+func DomainCheckerCase3(domainList string, tldList string, output string, httpxS bool) {
 	fileDomain := string(readFile(domainList))
 	fileDomainSlice := strings.Split(string(fileDomain), "\n")
 	tldListSlice := string(readFile(tldList))
@@ -112,6 +125,12 @@ func DomainCheckerCase3(domainList string, tldList string, output string) {
 			}
 		}
 	}
+
+	if httpxS {
+
+		httpxCheck.HttpxChecker(content)
+		os.Exit(0)
+	}
 	if output != "" {
 		outputInFile(output, strings.Join(content, "\n"))
 	} else {
@@ -119,7 +138,7 @@ func DomainCheckerCase3(domainList string, tldList string, output string) {
 	}
 
 }
-func DomainCheckerCase4(domainName string, tldList string, output string) {
+func DomainCheckerCase4(domainName string, tldList string, output string, httpxS bool) {
 	var parsedUrl *tld.URL
 	if strings.HasPrefix(domainName, "http") {
 		parsedUrl, _ = tld.Parse(domainName)
@@ -136,6 +155,13 @@ func DomainCheckerCase4(domainName string, tldList string, output string) {
 		value = strings.TrimRight(value, "\r")
 		content += parsedUrl.Domain + "." + value + "\n"
 	}
+
+	if httpxS {
+		httpSlice := strings.Split(content, "\n")
+		httpxCheck.HttpxChecker(httpSlice)
+		os.Exit(0)
+	}
+
 	if output != "" {
 		outputInFile(output, content)
 	} else {
