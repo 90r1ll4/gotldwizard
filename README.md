@@ -18,27 +18,25 @@ Gotldwizard provides a command-line interface to change TLDs for one or multiple
 
 ```bash
 
-__/\\\\\\\\\\\\\\\__/\\\______________/\\\\\\\\\\\\_______________/\\\______________/\\\__/\\\\\\\\\\\__/\\\\\\\\\\\\\\\_____/\\\\\\\\\_______/\\\\\\\\\______/\\\\\\\\\\\\____        
- _\///////\\\/////__\/\\\_____________\/\\\////////\\\____________\/\\\_____________\/\\\_\/////\\\///__\////////////\\\____/\\\\\\\\\\\\\___/\\\///////\\\___\/\\\////////\\\__       
-  _______\/\\\_______\/\\\_____________\/\\\______\//\\\___________\/\\\_____________\/\\\_____\/\\\_______________/\\\/____/\\\/////////\\\_\/\\\_____\/\\\___\/\\\______\//\\\_      
-   _______\/\\\_______\/\\\_____________\/\\\_______\/\\\___________\//\\\____/\\\____/\\\______\/\\\_____________/\\\/_____\/\\\_______\/\\\_\/\\\\\\\\\\\/____\/\\\_______\/\\\_     
-    _______\/\\\_______\/\\\_____________\/\\\_______\/\\\____________\//\\\__/\\\\\__/\\\_______\/\\\___________/\\\/_______\/\\\\\\\\\\\\\\\_\/\\\//////\\\____\/\\\_______\/\\\_    
-     _______\/\\\_______\/\\\_____________\/\\\_______\/\\\_____________\//\\\/\\\/\\\/\\\________\/\\\_________/\\\/_________\/\\\/////////\\\_\/\\\____\//\\\___\/\\\_______\/\\\_   
-      _______\/\\\_______\/\\\_____________\/\\\_______/\\\_______________\//\\\\\\//\\\\\_________\/\\\_______/\\\/___________\/\\\_______\/\\\_\/\\\_____\//\\\__\/\\\_______/\\\__  
-       _______\/\\\_______\/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\/_________________\//\\\__\//\\\_______/\\\\\\\\\\\__/\\\\\\\\\\\\\\\_\/\\\_______\/\\\_\/\\\______\//\\\_\/\\\\\\\\\\\\/___ 
-        _______\///________\///////////////__\////////////____________________\///____\///_______\///////////__\///////////////__\///________\///__\///________\///__\////////////_____
 
-                                                                                                                                             By:- Ashwin (@90r1ll4)
+        #   _______        ______       _  _  _ _____ ______ _______  ______ ______   #
+        #      |    |      |     \      |  |  |   |    ____/ |_____| |_____/ |     \  #
+        #      |    |_____ |_____/      |__|__| __|__ /_____ |     | |    \_ |_____/  #
+        #                                                                             #
+
+                                                                By:- Ashwin (@90r1ll4)
 Swapping out the TLD, you can modify the domain name's extension to better suit your needs.
 
-Usage:  tldwizard [command]
+Usage:
+  tldwizard [command]
 
 Available Commands:
-  domain      To choose domain mode
+  domain      Domain Mode
   help        Help about any command
 
 Flags:
   -h, --help      help for tldwizard
+      --httpx     Use httpx for the output domains
   -v, --version   version for tldwizard
 
 Use "tldwizard [command] --help" for more information about a command.
@@ -46,6 +44,15 @@ Use "tldwizard [command] --help" for more information about a command.
 To see subcommands add `command -h`
 
 ```
+
+        #   _______        ______       _  _  _ _____ ______ _______  ______ ______   #
+        #      |    |      |     \      |  |  |   |    ____/ |_____| |_____/ |     \  #
+        #      |    |_____ |_____/      |__|__| __|__ /_____ |     | |    \_ |_____/  #
+        #                                                                             #
+
+                                                                By:- Ashwin (@90r1ll4)
+Domain Mode
+
 Usage:
   tldwizard domain [flags]
 
@@ -59,6 +66,9 @@ Flags:
   -o, --output string       output file name or path
   -t, --tld string          TLD(Top Level Domain) to add[com,in,tech]
   -T, --tldList string      TLD (Top Level Domain) list to add
+
+Global Flags:
+      --httpx   Use httpx for the output domains
 ```
 To build use command `go build` to get genrate binary file.
 
@@ -108,5 +118,20 @@ example.tech
 ```
 
 To store the output in file use `-o  FILENAME` 
+
+### Using `httpx` Flag
+
+```bash
+gotldwizard domain -d example.in -t com,org --httpx
+
+        #   _______        ______       _  _  _ _____ ______ _______  ______ ______   #
+        #      |    |      |     \      |  |  |   |    ____/ |_____| |_____/ |     \  #
+        #      |    |_____ |_____/      |__|__| __|__ /_____ |     | |    \_ |_____/  #
+        #                                                                             #
+
+                                                                By:- Ashwin (@90r1ll4)
+https://example.org
+https://example.com
+```
 
 **NOTE:** Gotldwizard should be used responsibly and with permission from the target owner.
