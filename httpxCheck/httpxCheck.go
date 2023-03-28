@@ -1,4 +1,4 @@
-package httpxS
+package httpxCheck
 
 import (
 	"log"
